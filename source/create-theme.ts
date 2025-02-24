@@ -65,7 +65,6 @@ interface Settings {
 const createTheme = ({variant, settings, styles}: Options): Extension => {
 	const theme = EditorView.theme(
 		{
-			// eslint-disable-next-line @typescript-eslint/naming-convention
 			'&': {
 				backgroundColor: settings.background,
 				color: settings.foreground,
@@ -76,7 +75,7 @@ const createTheme = ({variant, settings, styles}: Options): Extension => {
 			'.cm-cursor, .cm-dropCursor': {
 				borderLeftColor: settings.caret,
 			},
-			'&.cm-focused .cm-selectionBackgroundm .cm-selectionBackground, .cm-content ::selection':
+			'&.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground, .cm-selectionBackground, .cm-content ::selection':
 				{
 					backgroundColor: settings.selection,
 				},
